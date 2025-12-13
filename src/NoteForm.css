@@ -1,0 +1,45 @@
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-window {
+  background-color: rgba(248, 243, 205, 1);
+  width: 350px;
+  padding: 25px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-window input, .form-window textarea {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  padding: 8px;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  
+}
+.button{
+  background-color: rgb(246, 233, 107);
+  color: rgb(0, 0, 0);
+  border-radius: 20px;
+  border:none;
+  padding: 8px 10px 8px 10px;
+}
+.button:hover{
+  background-color: rgba(246, 233, 107,0.7);
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+  color: rgb(162, 202, 113);
+  transition: color 0.5s, background-color 0.5s,box-shadow 0.5s;
+  cursor: pointer;
+}

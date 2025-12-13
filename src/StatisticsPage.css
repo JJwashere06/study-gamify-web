@@ -1,0 +1,31 @@
+.statistics-content{
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.statistics-page{
+    height: 100vh; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;  
+    
+    
+}
+.back-button{
+    width: 150px;
+  border: none;
+  background-color: rgb(246, 233, 107);
+  font-size: 20px;
+  color: rgb(56, 127, 57);
+  border-radius: 20px;
+  padding: 10px 8px 10px 8px;
+}
+.back-button:hover{
+    background-color: rgba(246, 233, 107,0.7);
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+  color: rgb(162, 202, 113);
+  transition: color 0.5s, background-color 0.5s,box-shadow 0.5s;
+  cursor: pointer;
+}
