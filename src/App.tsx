@@ -70,7 +70,7 @@ function App() {
         element={
           <div>
             <div className="container">
-              <h1 className="webheader">Progress gamify</h1>
+              <h1 className="webheader">Study Progress Gamify</h1>
 
               {/*<p id="coinDisplay">
                 <img
