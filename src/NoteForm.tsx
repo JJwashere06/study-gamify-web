@@ -31,6 +31,7 @@ export default function NoteForm({
 
   const handleDone = () => {
     if (!title.trim()) return alert("Title required");
+    if (hours < 1) return alert("Hours has to be atleast 1 hour");
     onDone({ title, description, hours });
   };
 
