@@ -76,8 +76,9 @@ function App() {
         element={
           <div>
             <div className="container">
+              <img className="container" src="/pictureformyweb/head2.png" />
               <h1 className="webheader">Study Progress Gamify</h1>
-              <img src="/pictureformyweb/head2.png" />
+
               {/*<p id="coinDisplay">
                 <img
                   className="coinDisplayPic"
