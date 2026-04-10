@@ -1,11 +1,11 @@
 import "./main.css";
 import "bootstrap/dist/css/bootstrap.css";
-import { useState } from "react";
 import NoteCard from "./NoteCard";
 import NoteForm from "./NoteForm";
-import { Routes, Route, useNavigate } from "react-router-dom";
 import TimerPage from "./TimerPage";
 import StatisticsPage from "./StatisticsPage";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { useEffect } from "react";
 import { STORAGE_KEYS } from "./utils/StorageKey";
 
@@ -17,14 +17,20 @@ type Note = {
 
 function App() {
   const navigate = useNavigate();
+  //check local storage for saved note
+  //json.parse(string->object)
+  //json.stringify(object->string)
   const [notes, setNotes] = useState<Note[]>(() => {
     const saved = localStorage.getItem("study_notes");
     return saved ? JSON.parse(saved) : [];
   });
 
+  //check to show form or not
   const [showForm, setShowForm] = useState(false);
+  //check which is one is editing
   const [editIndex, setEditIndex] = useState<number | null>(null);
 
+  //save feature everytime after update note
   useEffect(() => {
     localStorage.setItem(STORAGE_KEYS.NOTES, JSON.stringify(notes));
   }, [notes]);
@@ -71,7 +77,7 @@ function App() {
           <div>
             <div className="container">
               <h1 className="webheader">Study Progress Gamify</h1>
-
+              <img />
               {/*<p id="coinDisplay">
                 <img
                   className="coinDisplayPic"
