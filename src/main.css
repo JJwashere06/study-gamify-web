@@ -70,10 +70,19 @@ p {
   display: block;
 }
 .webheader {
-  position: absolute;
+  position: absolute; /* Moves text out of the flow so it sits ON the image */
+  top: 50%; /* Move down 50% of the container height */
+  left: 50%; /* Move right 50% of the container width */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Pulls it back by half its own size to hit the dead center */
+
+  margin: 0; /* Remove default browser margins */
   font-size: 50px;
-  color: rgba(255, 255, 255, 1);
-  text-align: center;
+  color: white;
+  white-space: nowrap; /* Keeps the text on one line */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 .coinDisplayPic {
   width: 40px;
