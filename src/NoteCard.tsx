@@ -6,6 +6,7 @@ type NoteProps = {
   onEdit: () => void;
   onDelete: () => void;
   onDo: () => void;
+  onFavourite: () => void;
 };
 
 export default function NoteCard({
@@ -16,13 +17,14 @@ export default function NoteCard({
   onDelete,
   onDo,
 }: NoteProps) {
+  const minutes = Number(hours) * 60;
   return (
     <div className="task">
       <div className="tasky">
         <h2>{title}</h2>
         <p>{description}</p>
         <p>
-          <strong>Duration:</strong> {hours} hours
+          <strong>Duration:</strong> {hours} minutes
         </p>
         <button className="modify-button" onClick={onEdit}>
           Edit

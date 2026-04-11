@@ -31,7 +31,7 @@ export default function NoteForm({
 
   const handleDone = () => {
     if (!title.trim()) return alert("Title required");
-    if (hours < 1) return alert("Hours has to be atleast 1 hour");
+    if (hours < 1) return alert("Must be at least 1 minute");
     onDone({ title, description, hours });
   };
 
@@ -53,7 +53,7 @@ export default function NoteForm({
         <input
           value={hours}
           type="number"
-          placeholder="Duration (Hours)"
+          placeholder="Duration (Minutes)"
           onChange={(e) => setHours(Number(e.target.value))}
         />
 

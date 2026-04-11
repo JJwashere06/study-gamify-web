@@ -30,6 +30,10 @@ function App() {
   //check which is one is editing
   const [editIndex, setEditIndex] = useState<number | null>(null);
 
+  const [search, setSearch] = useState("");
+  const filterdNotes = notes.filter((note) =>
+    note.title.toLowerCase().includes(search.toLowerCase()),
+  );
   //save feature everytime after update note
   useEffect(() => {
     localStorage.setItem(STORAGE_KEYS.NOTES, JSON.stringify(notes));
@@ -76,7 +80,7 @@ function App() {
         element={
           <div>
             <div className="container">
-              <img className="container" src="/pictureformyweb/head2.png" />
+              <img className="header-img" src="/pictureformyweb/head2.png" />
               <h1 className="webheader">Study Progress Gamify</h1>
 
               {/*<p id="coinDisplay">

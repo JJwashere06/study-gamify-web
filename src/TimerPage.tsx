@@ -9,7 +9,9 @@ export default function TimerPage() {
   const navigate = useNavigate();
   const { hours } = location.state || { hours: 1 };
 
-  const totalSeconds = hours * 3600;
+  //const totalSeconds = hours * 3600;
+  const totalSeconds = hours * 60;
+
   const [time, setTime] = useState(totalSeconds);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -27,7 +29,8 @@ export default function TimerPage() {
     const h = Math.floor(sec / 3600);
     const m = Math.floor((sec % 3600) / 60);
     const s = sec % 60;
-    return `${h}h : ${m}m : ${s}s`;
+    if (h > 0) return `${h}h : ${m}m : ${s}s`;
+    return `${m}m : ${s}s`;
   };
 
   return (
