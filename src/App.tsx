@@ -13,6 +13,7 @@ type Note = {
   title: string;
   description: string;
   hours: number;
+  isFinish: boolean;
 };
 
 function App() {
@@ -29,16 +30,19 @@ function App() {
   const [showForm, setShowForm] = useState(false);
   //check which is one is editing
   const [editIndex, setEditIndex] = useState<number | null>(null);
+  //check if the note is done or not
+  const [finish, setFinish] = useState(false);
 
-  const [search, setSearch] = useState("");
-  const filterdNotes = notes.filter((note) =>
-    note.title.toLowerCase().includes(search.toLowerCase()),
-  );
   //save feature everytime after update note
   useEffect(() => {
     localStorage.setItem(STORAGE_KEYS.NOTES, JSON.stringify(notes));
   }, [notes]);
 
+  const handleFinish = (index: number) => {
+    const updatedNotes = [...notes];
+    updatedNotes[index] = { ...updatedNotes[index], isFinish: true };
+    setNotes(updatedNotes);
+  };
   const openAddForm = () => {
     setEditIndex(null); // ensure no editing
     setShowForm(true);
@@ -96,7 +100,7 @@ function App() {
               className="menu"
               style={{ marginTop: "10px", marginBottom: "10px" }}
             >
-              <p className="Menu">Menu</p>
+              <p className="title">Menu</p>
 
               <div
                 className="menubutton"

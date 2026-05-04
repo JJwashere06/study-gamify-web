@@ -14,6 +14,7 @@ p {
   text-align: center;
   font-size: 25px;
   color: white;
+
   background-color: rgb(53, 165, 43);
   height: auto;
   margin: 10px;
@@ -100,8 +101,10 @@ p {
   padding: 8px 15px 8px 15px;
   background-color: rgba(255, 255, 255, 0.7);
 }
-.Menu {
-  color: rgb(162, 202, 113);
+.title {
+  /*color: rgb(162, 202, 113);*/
+  color: rgb(35, 109, 28);
+
   font-weight: bold;
   font-size: 50px;
 
